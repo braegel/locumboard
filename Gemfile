@@ -36,3 +36,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# nodejs
+gem 'execjs'
+gem 'therubyracer'
