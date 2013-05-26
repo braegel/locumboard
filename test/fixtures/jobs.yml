@@ -2,14 +2,14 @@
 
 one:
   provider: 1
-  startdate: <%= 1.days.from_now %>
-  enddate: <%= 1.days.from_now %>
+  startdate: <%= 2.days.from_now %>
+  enddate: <%= 2.days.from_now %>
   specialization: MyString
   comment: MyText
 
 two:
   provider: 1
-  startdate: <%= 1.days.from_now %>
-  enddate: <%= 2.days.from_now %>
+  startdate: <%= 2.days.from_now %>
+  enddate: <%= 3.days.from_now %>
   specialization: MyString
   comment: MyText

@@ -47,4 +47,11 @@ class JobTest < ActiveSupport::TestCase
     assert job.invalid?
   end
 
+  test "enddate may be on startdate" do
+    job = jobs(:one)
+    job.startdate=Date.today + 5.day
+    job.enddate=Date.today + 5.day
+    assert job.valid?
+  end
+
 end

@@ -3,6 +3,15 @@ class Job < ActiveRecord::Base
 
   validates :provider, :startdate, :enddate, :specialization, :comment, presence: true
   validates_date :startdate, :after => Date.today
-  validates_date :enddate, :after => this.startdate - 1.day
+
+  validate :enddate_must_not_be_before_startdate
+
+  def enddate_must_not_be_before_startdate
+    if enddate && startdate 
+      if enddate < startdate
+        errors.add(:enddate, "must be before startdate")
+      end
+    end
+  end
 
 end
