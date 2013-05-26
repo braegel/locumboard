@@ -5,10 +5,10 @@ class JobTest < ActiveSupport::TestCase
   test "job attributes must not be empty" do
     job = Job.new
     assert job.invalid?
-    assert job.errors[:title].any?
-    assert job.errors[:description].any?
-    assert job.errors[:price].any?
-    assert job.errors[:image_url].any?
+    assert job.errors[:provider].any?
+    assert job.errors[:startdate].any?
+    assert job.errors[:enddate].any?
+    assert job.errors[:comment].any?
   end
 
 end
