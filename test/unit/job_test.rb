@@ -9,6 +9,7 @@ class JobTest < ActiveSupport::TestCase
     assert job.errors[:startdate].any?
     assert job.errors[:enddate].any?
     assert job.errors[:comment].any?
+    assert job.errors[:location].any?
   end
 
   test "job fixture :one is valid" do

@@ -6,6 +6,7 @@ one:
   enddate: <%= 2.days.from_now %>
   specialization: MyString
   comment: MyText
+  location: Here
 
 two:
   provider: 1
@@ -13,3 +14,4 @@ two:
   enddate: <%= 3.days.from_now %>
   specialization: MyString
   comment: MyText
+  location: There
