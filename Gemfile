@@ -40,3 +40,6 @@ gem 'jquery-rails'
 # nodejs
 gem 'execjs'
 gem 'therubyracer'
+
+# date validation
+gem 'validates_timeliness'

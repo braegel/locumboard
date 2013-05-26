@@ -11,4 +11,40 @@ class JobTest < ActiveSupport::TestCase
     assert job.errors[:comment].any?
   end
 
+  test "job fixture :one is valid" do
+    job = jobs(:one)
+    assert job.valid?
+  end
+
+  test "startdate must not be today" do
+    job = jobs(:one)
+    job.startdate=Date.today;
+    assert job.invalid?
+  end
+
+  test "enddate must not be today" do
+    job = jobs(:one)
+    job.enddate=Date.today;
+    assert job.invalid?
+  end
+
+  test "startdate must not be yesterday" do
+    job = jobs(:one)
+    job.startdate=Date.yesterday;
+    assert job.invalid?
+  end
+
+  test "enddate must not be yesterday" do
+    job = jobs(:one)
+    job.enddate=Date.yesterday;
+    assert job.invalid?
+  end
+
+  test "enddate must not be before startdate" do
+    job = jobs(:one)
+    job.startdate=Date.today + 5.day
+    job.enddate=Date.today + 4.day
+    assert job.invalid?
+  end
+
 end
