@@ -43,3 +43,6 @@ gem 'therubyracer'
 
 # date validation
 gem 'validates_timeliness'
+
+# authentication
+gem 'bcrypt-ruby'
