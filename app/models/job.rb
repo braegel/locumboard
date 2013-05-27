@@ -6,7 +6,7 @@ class Job < ActiveRecord::Base
 
   validate :enddate_must_not_be_before_startdate
 
-  belongs_to :user
+  belongs_to :user, :foreign_key => "provider"
 
   def enddate_must_not_be_before_startdate
     if enddate && startdate 
