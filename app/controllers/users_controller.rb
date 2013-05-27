@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorzie
+
   def new
     @user = User.new
   end

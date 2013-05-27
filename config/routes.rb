@@ -1,6 +1,7 @@
 Locumboard::Application.routes.draw do
   resources :jobs
   resources :users
+  resources :sessions
 
 
   # The priority is based upon order of creation:

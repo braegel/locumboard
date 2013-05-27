@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  skip_before_filter :authorize, :only => [:show, :index]
+
   # GET /jobs
   # GET /jobs.json
   def index
