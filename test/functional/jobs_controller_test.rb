@@ -40,6 +40,15 @@ class JobsControllerTest < ActionController::TestCase
     assert_redirected_to job_path(assigns(:job))
   end
 
+  test "should not destroy job" do
+    login_as(:two)
+    assert_difference('Job.count', 0) do
+      delete :destroy, id: @job
+    end
+    assert_redirected_to jobs_path
+  end
+
+
   test "should destroy job" do
     login_as(:one)
     assert_difference('Job.count', -1) do
