@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p>Logged in as: <%= current_user.email %></p>
+<p>Logged in as: <%= current_user.email %> (ID: <%= current_user.id %>)</p>
 
 <%= yield %>
 

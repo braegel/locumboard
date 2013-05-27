@@ -62,7 +62,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     respond_to do |format|
-      if @job.update_attributes(params[:job])
+      if current_user == @job.user && @job.update_attributes(params[:job])
         format.html { redirect_to @job, notice: 'Job was successfully updated.' }
         format.json { head :no_content }
       else
@@ -76,8 +76,10 @@ class JobsController < ApplicationController
   # DELETE /jobs/1.json
   def destroy
     @job = Job.find(params[:id])
-    @job.destroy
-
+    
+    if current_user == @job.user
+      @job.destroy
+    end
     respond_to do |format|
       format.html { redirect_to jobs_url }
       format.json { head :no_content }
