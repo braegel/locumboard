@@ -17,3 +17,5 @@
 # Ignore emacs
 *#
 *~
+
+/config/passenger.*
