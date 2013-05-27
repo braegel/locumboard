@@ -5,7 +5,7 @@ one:
   startdate: <%= 2.days.from_now %>
   enddate: <%= 2.days.from_now %>
   specialization: MyString
-  comment: MyText
+  description: MyText
   location: Here
 
 two:
@@ -13,5 +13,5 @@ two:
   startdate: <%= 2.days.from_now %>
   enddate: <%= 3.days.from_now %>
   specialization: MyString
-  comment: MyText
+  description: MyText
   location: There
