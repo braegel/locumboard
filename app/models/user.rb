@@ -1,10 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password_digest
+  attr_accessible :email, :password_digest, :password, :password_confirmation
   validates_format_of :email, :with => /@/
+  has_secure_password
+  validates_presence_of :password, :on => :create
 
-
-  class User < ActiveRecord::Base
-    has_secure_password
-    validates_presence_of :password, :on => :create
-  end
 end
