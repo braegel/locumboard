@@ -6,6 +6,8 @@ class Job < ActiveRecord::Base
 
   validate :enddate_must_not_be_before_startdate
 
+  belongs_to :user
+
   def enddate_must_not_be_before_startdate
     if enddate && startdate 
       if enddate < startdate

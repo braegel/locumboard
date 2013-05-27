@@ -3,8 +3,11 @@ class User < ActiveRecord::Base
 
   validates_format_of :email, :with => /@/
   validates :email, :uniqueness => true
+  validates_presence_of :password, :on => :create
 
   has_secure_password
-  validates_presence_of :password, :on => :create
+
+  has_many :jobs
+
 
 end

@@ -46,4 +46,5 @@ class JobsControllerTest < ActionController::TestCase
 
     assert_redirected_to jobs_path
   end
+
 end
