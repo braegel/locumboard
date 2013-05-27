@@ -35,15 +35,16 @@ class JobsControllerTest < ActionController::TestCase
   end
 
   test "should update job" do
+    login_as(:one)
     put :update, id: @job, job: { description: @job.description, enddate: @job.enddate, provider: @job.provider, specialization: @job.specialization, startdate: @job.startdate }
     assert_redirected_to job_path(assigns(:job))
   end
 
   test "should destroy job" do
+    login_as(:one)
     assert_difference('Job.count', -1) do
       delete :destroy, id: @job
     end
-
     assert_redirected_to jobs_path
   end
 
