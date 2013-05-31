@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      UserMailer.welcome_email(@user).deliver
+      Emailvalidation.create
       redirect_to root_url, :notice => "User created. A validation email has been sent to #{@user.email}!"
     else
       render "new"
