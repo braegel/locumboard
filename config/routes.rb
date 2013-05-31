@@ -1,4 +1,7 @@
 Locumboard::Application.routes.draw do
+  resources :emailvalidations
+
+
   resources :jobs
   resources :users
   resources :sessions
