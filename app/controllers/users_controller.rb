@@ -14,11 +14,4 @@ class UsersController < ApplicationController
       render "new"
     end
   end
-
-  def emailvalidation
-#todo
-      redirect_to root_url , :notice => "Account validated!"
-
-  end
-
 end

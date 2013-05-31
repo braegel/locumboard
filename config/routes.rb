@@ -1,12 +1,10 @@
 Locumboard::Application.routes.draw do
-  resources :emailvalidations
-
 
   resources :jobs
   resources :users
   resources :sessions
 
-  match 'users/:id/emailvalidation' => 'users#emailvalidation'
+  match '/emailvalidations/validate/:key' => 'emailvalidations#validate'
 
 
   # The priority is based upon order of creation:
