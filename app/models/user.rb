@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :emailvalidated
 
   validates_format_of :email, :with => /@/
   validates :email, :uniqueness => true

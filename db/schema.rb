@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531170620) do
+ActiveRecord::Schema.define(:version => 20130531192901) do
 
   create_table "emailvalidations", :force => true do |t|
     t.integer  "user_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130531170620) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.boolean  "emailvalidated"
   end
 
 end
